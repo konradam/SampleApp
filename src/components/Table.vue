@@ -2,7 +2,7 @@
   <table style="width:100%">
     <tr>
       <th>Ref</th>
-      <th>Name</th>
+      <th @click="order">Name</th>
       <th>Type</th>
     </tr>
     <tr v-for="(item, key) in filteredItems" v-bind:key="key">
@@ -15,11 +15,22 @@
 
 <script>
   export default {
+    data() {
+      return {
+        desc: false,
+      }
+    },
     props: {
       filteredItems: {
         type: Array,
         required: true,
       },
+    },
+    methods: {
+      order() {
+        this.$store.commit('order', this.desc);
+        this.desc = !this.desc;
+      }, 
     },
   }
 </script>

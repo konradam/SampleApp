@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import _ from 'lodash'
 
 Vue.use(Vuex)
 
@@ -14,6 +15,9 @@ export default new Vuex.Store({
   mutations: {
     setPage(state, page) {
       state.page = page;
+    },
+    order(state, desc) {
+      state.items = _.orderBy(state.items, ['name'], [ desc ? 'desc' : 'asc']);
     },
   },
 })
