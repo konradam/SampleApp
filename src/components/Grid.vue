@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <div class="grid-header">
-      <input v-model="searchText" placeholder="filter" />
-      <button>Create new</button>
+  <div class="grid__wrapper">
+    <div class="grid__header">
+      <input v-model="searchText" placeholder="filter" class="grid__input" />
+      <button class="grid__button">Create new</button>
     </div>
     <Table :filtered-items="pageItems" />
-    <div class="grid-footer">
+    <div class="grid__footer">
       <label>Items per page:</label>
-      <input type="number" v-model="numberItems"/>
+      <input type="number" v-model="numberItems" class="grid__input" />
       <Pagination :items-per-page="itemsPerPage" :length="length" />
     </div>
   </div>
@@ -22,7 +22,7 @@
   export default {
     data() {
       return {
-        numberItems: 10,
+        numberItems: 5,
         searchText: null,
       }
     },
@@ -62,15 +62,34 @@
 </script>
 
 <style lang="scss" scoped>
-  .grid-header {
-    display: flex;
-    margin: 20px 0;
-    justify-content: flex-end;
+  .grid__wrapper {
+    padding: 20px;
   }
 
-  .grid-footer {
+  .grid__header {
     display: flex;
     margin: 20px 0;
     justify-content: flex-end;
+    align-items: center;
+  }
+
+  .grid__input {
+    margin: 0 20px;
+    border-radius: 5px;
+    padding: 6px;
+  }
+
+  .grid__button {
+    border-radius: 5px;
+    padding: 6px 15px;
+    background-color: cornflowerblue;
+    color: white;
+  }
+
+  .grid__footer {
+    display: flex;
+    margin: 20px 0;
+    justify-content: flex-end;
+    align-items: baseline;
   }
 </style>
