@@ -14,10 +14,10 @@
     <div class="header__secondary">
       <div class="header__secondary--align">
         <div class="header__countdown">
-          <DisplayNumber number=2 label="years" />
-          <DisplayNumber number=1 label="months" />
-          <DisplayNumber number=12 label="days" />
-          <DisplayNumber number=23 label="hours" />
+          <DisplayNumber :number=2 label="years" />
+          <DisplayNumber :number=1 label="months" />
+          <DisplayNumber :number=12 label="days" />
+          <DisplayNumber :number=23 label="hours" />
         </div>
         <div class="header__data">
           <HeaderData text="Tournament dates" />
