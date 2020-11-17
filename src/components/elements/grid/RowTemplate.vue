@@ -45,7 +45,7 @@
         console.log('delete');
       },
     },
-  }
+  };
 </script>
 
 <style lang="scss" scoped>

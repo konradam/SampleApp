@@ -39,7 +39,7 @@
         this.$store.commit('setPage', pageNum);
       },
     },
-  }
+  };
 </script>
 
 <style lang="scss" scoped>

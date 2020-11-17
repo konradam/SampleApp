@@ -39,7 +39,7 @@
       DisplayNumber,
       HeaderData,
     },
-  }
+  };
 </script>
 
 <style lang="scss" scoped>
