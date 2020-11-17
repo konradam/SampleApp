@@ -47,7 +47,7 @@
     border: 1px blue solid;
     display: flex;
 
-    @media (max-width:500px) {
+    @media (max-width:676px) {
       flex-direction: column;
     }
   }
@@ -55,7 +55,7 @@
   .header__primary{
     border-right: 1px solid blue;
     flex: 2;
-    @media (max-width:500px) {
+    @media (max-width:676px) {
       border-right: none;
       border-bottom: 1px solid blue;
     }

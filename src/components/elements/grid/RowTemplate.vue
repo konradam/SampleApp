@@ -12,7 +12,7 @@
     <td>
       <div v-show="hover" class="table__body-action">
         <BIconTrash @click="deleteItem" class="table__icon" />
-        <BIconPencil  @click="edit" class="table__icon" />
+        <BIconPencil  @click="editItem" class="table__icon" />
       </div>
     </td>
   </tr>
@@ -38,11 +38,11 @@
       },
     },
     methods: {
-      edit() {
-        console.log('edit');
+      editItem() {
+        this.$router.push({ name: 'grid_edit_item', params: { id: this.item.id } });
       },
       deleteItem() {
-        console.log('delete');
+        this.$store.dispatch('deleteItem', this.item.id);
       },
     },
   };

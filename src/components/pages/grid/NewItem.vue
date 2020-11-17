@@ -22,6 +22,7 @@
       }),
     },
     created() {
+      this.$store.commit('clearForm');
       this.$store.commit('initForm', { id: _.max(_.map(this.items, 'id')) + 1 } );
     },
     methods: {

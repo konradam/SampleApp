@@ -23,10 +23,11 @@ const mutations = {
     _.assign(state.form, { id: null, name: '', type: '', ref: null, parentEvents: [] });
   },
   addItem(state, item) {
-    state.items.push(item);
-    _.assign(state.form, { id: null, name: '', type: '', ref: null, parentEvents: [] });
+    const prevItems = state.items;
+    const newItem = _.cloneDeep(item);
+    state.items = _.concat(prevItems, [newItem]);
   },
-  removeItem(state, id) {
+  deleteItem(state, id) {
     const index = _.findIndex(state.items, { id });
     state.items.splice(index, 1);
   },
@@ -37,10 +38,12 @@ const actions = {
   createItem(context) {
     context.commit('addItem', context.state.form);
   },
-  updateItem(context) {
-    context.commit('removeItem', context.state.form.id);
+  updateItem(context, id) {
+    context.commit('deleteItem', id);
     context.commit('addItem', context.state.form);
-    context.commit('clearForm');
+  },
+  deleteItem(context, id) {
+    context.commit('deleteItem', id);
   },
 };
   
@@ -48,9 +51,9 @@ export default new Vuex.Store({
   state: {
     items: [{id: 1, ref: 21, name:"test", type: 'Fourth Operation Type', parentEvents: ['Before Last Event', 'Not Last Non Event'] }, 
             {id: 2, ref: 25, name:"stadium management", type:"902"}, 
-            {id: 3, ref: 23, name:"ala", type:"668"}, {ref: 25, name:"Media", type:"hi"}, 
-            {id: 4, ref: 27, name:"bela", type:"456"}, {ref: 25, name:"New", type:"hello"}, 
-            {id: 5, ref: 29, name:"cela", type:"123"}, {ref: 25, name:"test function", type:"123 123"}],
+            {id: 3, ref: 23, name:"ala", type:"668"}, {id: 6, ref: 25, name:"Media", type:"hi"}, 
+            {id: 4, ref: 27, name:"bela", type:"456"}, {id: 7, ref: 25, name:"New", type:"hello"}, 
+            {id: 5, ref: 29, name:"cela", type:"123"}, {id: 8, ref: 25, name:"test function", type:"123 123"}],
     page: 1,
     form: {
       id: null,

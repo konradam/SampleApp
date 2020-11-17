@@ -1,16 +1,16 @@
 <template>
   <form class="item-form__wrapper">
     <div class="item-form__attribute">
-      <div class="item-form__label">
+      <label class="item-form__label">
         Name
-      </div>
+      </label>
       <input v-model="name" class="item-form__input" />
     </div>
     
     <div class="item-form__attribute">
-      <div class="item-form__label">
-      Type
-      </div>
+      <label class="item-form__label">
+        Type
+      </label>
       <select v-model="type" class="item-form__select">
         <option v-for="type in types" :key="type">
           {{ type }}
@@ -19,28 +19,22 @@
     </div>
     
     <div class="item-form__attribute">
-      <div class="item-form__label">
+      <label class="item-form__label">
         Reference number
-      </div>
+      </label>
       <input v-model="ref" type="number" required class="item-form__input" />
     </div>
     
     <div class="item-form__attribute">
-      <div class="item-form__label">
+      <label class="item-form__label">
         Parent Events
-      </div>
+      </label>
       <select v-model="parentEvents" multiple class="item-form__select">
         <option v-for="event in events" :key="event">
-        {{ event }}
+          {{ event }}
         </option>
       </select>
     </div>
-    
-    {{ form }}
-    <br>
-    <br>
-    {{ items }}
-    <br>
   </form>
 </template>
   
@@ -49,7 +43,7 @@
   import { createHelpers } from 'vuex-map-fields';
   
   const { mapFields } = createHelpers({
-   getterType: 'getField',
+    getterType: 'getField',
     mutationType: 'updateField',
   });
   
@@ -86,10 +80,6 @@
       events() {
         return predefinedEvents;
       },
-    },
-    destroyed() {
-      console.log('destroyed');
-      // this.$store.commit('clearForm');
     },
   };
 </script>

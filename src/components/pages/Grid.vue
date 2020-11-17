@@ -69,7 +69,6 @@
     },
     methods: {
       goToNew() {
-        console.log('go to new');
         this.$router.push({ name: 'grid_new_item' });
       },
     },
