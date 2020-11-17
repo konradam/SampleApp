@@ -13,9 +13,6 @@ const mutations = {
   setPage(state, page) {
     state.page = page;
   },
-  order(state, desc) {
-    state.items = _.orderBy(state.items, [item => item.name.toLowerCase()], [ desc ? 'desc' : 'asc']);
-  },
   initForm(state, params) {
     _.assign(state.form, params);
   },

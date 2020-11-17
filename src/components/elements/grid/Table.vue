@@ -2,7 +2,7 @@
   <table class="table table-hover">
     <tr>
       <th class="table__ref">Ref</th>
-      <th @click="order" class="table__name">
+      <th @click="changeOrder" class="table__name">
         Name
         <BIconArrowUp v-if="desc" />
         <BIconArrowDown v-else />
@@ -23,11 +23,6 @@
   import { BIconArrowUp, BIconArrowDown } from 'bootstrap-vue';
 
   export default {
-    data() {
-      return {
-        desc: false,
-      };
-    },
     components: {
       RowTemplate,
       BIconArrowUp,
@@ -38,11 +33,14 @@
         type: Array,
         required: true,
       },
+      desc: {
+        type: Boolean,
+        required: true,
+      },
     },
     methods: {
-      order() {
-        this.$store.commit('order', this.desc);
-        this.desc = !this.desc;
+      changeOrder() {
+        this.$emit('change-order');
       }, 
     },
   };

@@ -6,7 +6,7 @@
         Create new
       </button>
     </div>
-    <Table :filtered-items="pageItems" />
+    <Table :filtered-items="pageItems" :desc="desc" @change-order="desc = !desc" />
     <div class="grid__footer">
       <label>Items per page:</label>
       <select v-model="itemsPerPage" class="grid__select">
@@ -25,18 +25,14 @@
   import { mapState } from 'vuex';
   import _ from 'lodash';
 
-  const predefinedNumbers = [
-    5,
-    10,
-    15,
-    20,
-  ];
+  const predefinedNumbers = [ 5, 10, 15, 20 ];
 
   export default {
     data() {
       return {
         itemsPerPage: 5,
         searchText: null,
+        desc: false,
       }
     },
     components: {
@@ -49,7 +45,7 @@
         page: state => state.page,
       }),
       filteredItems() {
-        return _.filter(this.items, (item) => {
+        return _.filter(this.sortedItems, (item) => {
         const search = _.toLower(this.searchText);
 
         return _.toLower(item.name).includes(search) 
@@ -65,6 +61,9 @@
       },
       numbers() {
         return predefinedNumbers;
+      },
+      sortedItems() {
+        return _.orderBy(this.items, [item => item.name.toLowerCase()], [ this.desc ? 'desc' : 'asc']);
       },
     },
     methods: {
