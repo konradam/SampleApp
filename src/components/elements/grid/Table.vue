@@ -8,6 +8,7 @@
         <BIconArrowDown v-else />
       </th>
       <th>Type</th>
+      <th></th>
     </tr>
     <RowTemplate
       v-for="(item, key) in filteredItems" 

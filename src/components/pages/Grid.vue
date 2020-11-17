@@ -9,7 +9,11 @@
     <Table :filtered-items="pageItems" />
     <div class="grid__footer">
       <label>Items per page:</label>
-      <input type="number" v-model="numberItems" class="grid__input" />
+      <select v-model="itemsPerPage" class="grid__select">
+        <option v-for="number in numbers" :key="number">
+          {{ number }}
+        </option>
+      </select>
       <Pagination :items-per-page="itemsPerPage" :length="length" />
     </div>
   </div>
@@ -21,10 +25,17 @@
   import { mapState } from 'vuex';
   import _ from 'lodash';
 
+  const predefinedNumbers = [
+    5,
+    10,
+    15,
+    20,
+  ];
+
   export default {
     data() {
       return {
-        numberItems: 5,
+        itemsPerPage: 5,
         searchText: null,
       }
     },
@@ -37,13 +48,6 @@
         items: state => state.items,
         page: state => state.page,
       }),
-      itemsPerPage() {
-        if (_.isNil(this.numberItems) || this.numberItems <= 0 || this.numberItems >= 30){
-          return 10;
-        }
-
-        return this.numberItems;
-      },
       filteredItems() {
         return _.filter(this.items, (item) => {
         const search = _.toLower(this.searchText);
@@ -58,7 +62,10 @@
       },
       length() {
         return _.size(this.filteredItems);
-      }
+      },
+      numbers() {
+        return predefinedNumbers;
+      },
     },
     methods: {
       goToNew() {
@@ -99,5 +106,12 @@
     margin: 20px 0;
     justify-content: flex-end;
     align-items: baseline;
+  }
+
+  .grid__select {
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    padding: 10px 5px;
+    margin: 0 20px;
   }
 </style>
