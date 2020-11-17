@@ -2,23 +2,35 @@
   <table class="table table-hover">
     <tr>
       <th class="table__ref">Ref</th>
-      <th @click="order" class="table__name">Name</th>
+      <th @click="order" class="table__name">
+        Name
+        <BIconArrowUp v-if="desc" />
+        <BIconArrowDown v-else />
+      </th>
       <th>Type</th>
     </tr>
-    <tr v-for="(item, key) in filteredItems" v-bind:key="key" class="table__row">
-      <td>{{item.ref}}</td>
-      <td class="table__body-name">{{item.name}}</td>
-      <td>{{item.type}}</td>
-    </tr>
+    <RowTemplate
+      v-for="(item, key) in filteredItems" 
+      v-bind:key="key" 
+      :item="item"
+      class="table__row" />
   </table> 
 </template>
 
 <script>
+  import RowTemplate from './RowTemplate.vue';
+  import { BIconArrowUp, BIconArrowDown } from 'bootstrap-vue';
+
   export default {
     data() {
       return {
         desc: false,
       }
+    },
+    components: {
+      RowTemplate,
+      BIconArrowUp,
+      BIconArrowDown,
     },
     props: {
       filteredItems: {
@@ -48,13 +60,5 @@
     }
   }
 
-  .table__body-name {
-    color: blue;
-  }
 
-  .table__row {
-    &:hover {
-      background-color: lightblue;
-    }
-  }
 </style>

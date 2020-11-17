@@ -17,7 +17,7 @@ export default new Vuex.Store({
       state.page = page;
     },
     order(state, desc) {
-      state.items = _.orderBy(state.items, ['name'], [ desc ? 'desc' : 'asc']);
+      state.items = _.orderBy(state.items, [item => item.name.toLowerCase()], [ desc ? 'desc' : 'asc']);
     },
   },
 })
