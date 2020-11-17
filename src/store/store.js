@@ -46,11 +46,18 @@ const actions = {
   
 export default new Vuex.Store({
   state: {
-    items: [{id: 1, ref: 21, name:"test", type: 'Fourth Operation Type', parentEvents: ['Before Last Event', 'Not Last Non Event'] }, 
-            {id: 2, ref: 25, name:"stadium management", type:"902"}, 
-            {id: 3, ref: 23, name:"ala", type:"668"}, {id: 6, ref: 25, name:"Media", type:"hi"}, 
-            {id: 4, ref: 27, name:"bela", type:"456"}, {id: 7, ref: 25, name:"New", type:"hello"}, 
-            {id: 5, ref: 29, name:"cela", type:"123"}, {id: 8, ref: 25, name:"test function", type:"123 123"}],
+    items: [
+      {id: 1, ref: 12, name: 'Digital Device', type: 'Fourth Operation Type', parentEvents: ['Before Last Event', 'Not Last Non Event'] },
+      {id: 2, ref: 5, name: 'Energy Saver', type: 'First Operation Type'},
+      {id: 3, ref: 23, name: 'Green Energy Storage', type: 'Second Operation Type', parentEvents: ['Not Last Non Event'] },
+      {id: 4, ref: 37, name: 'Media Screen', type: 'Third Non-operation Type', parentEvents: ['Original Parent Event', 'Not Parent Event']},
+      {id: 5, ref: 82, name: 'Electrical Circuit', type: 'First Operation Type'},
+      {id: 6, ref: 125, name: 'Delivery Services', type: 'Fifth Non-operation Type', parentEvents: ['Before Last Event', 'Not Last Non Event']},
+      {id: 7, ref: 423, name: 'Master Equipment', type: 'Third Non-operation Type', parentEvents: ['Last Event']},
+      {id: 8, ref: 325, name: 'Agile System', type: 'Fourth Operation Type' },
+      {id: 9, ref: 327, name: 'Scrum Mastering', type: 'Fifth Non-operation Type' },
+      {id: 10, ref: 37, name: 'Secure Devices', type: 'First Operation Type' },
+      ],
     page: 1,
     form: {
       id: null,
