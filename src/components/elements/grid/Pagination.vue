@@ -1,7 +1,7 @@
 <template>
   <Paginate 
     :page-count="pageCount"
-    :page-range=3
+    :page-range="3"
     :click-handler="clickCallback"
     container-class="pagination"
     page-class="page-item" 
@@ -12,7 +12,6 @@
 <script>
   import Paginate from 'vuejs-paginate';
   import _ from 'lodash';
-  import { mapState } from 'vuex';
 
   export default {
     components: {
@@ -27,9 +26,6 @@
       }
     },
     computed: {
-      ...mapState({
-        items: state => state.items,
-      }),
       pageCount() {
         return _.ceil(this.length / this.itemsPerPage); 
       },

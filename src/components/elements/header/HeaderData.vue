@@ -10,7 +10,6 @@
       text: {
         type: String,
         required: true,
-        default: '',
       },
     },
   };

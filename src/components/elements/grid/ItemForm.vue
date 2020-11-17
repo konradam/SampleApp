@@ -39,7 +39,6 @@
 </template>
   
 <script>
-  import { mapState } from 'vuex';
   import { createHelpers } from 'vuex-map-fields';
   
   const { mapFields } = createHelpers({
@@ -60,7 +59,7 @@
     'Not Last Non Event',
     'Original Parent Event',
     'Not Parent Event',
-  ]
+  ];
   
   export default {
     computed: {
@@ -70,10 +69,6 @@
         'form.ref',
         'form.parentEvents',
       ]),
-      ...mapState({
-        items: state => state.items,
-        form: state => state.form,
-      }),
       types() {
         return predefinedTypes;
       },

@@ -28,10 +28,13 @@
     border: 1px solid gray;
     font-size: small;
     padding: 2px;
+    width: 100%;
   }
 
   .display-number__number {
-    padding: 20px 30px;
     font-size: x-large;
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
   }
 </style>
