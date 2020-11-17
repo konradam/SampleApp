@@ -6,9 +6,11 @@
   >
     <td>{{item.ref}}</td>
     <td class="table__body-name">{{item.name}}</td>
-    <td class="table__body-type">
+    <td>
       {{item.type}}
-      <div v-show="hover">
+    </td>
+    <td>
+      <div v-show="hover" class="table__body-action">
         <BIconTrash @click="deleteItem" class="table__icon" />
         <BIconPencil  @click="edit" class="table__icon" />
       </div>
@@ -51,9 +53,9 @@
     color: blue;
   }
 
-  .table__body-type {
+  .table__body-action {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
   .table__row {
