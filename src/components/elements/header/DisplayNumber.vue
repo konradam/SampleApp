@@ -13,12 +13,10 @@
       number: {
         type: Number,
         required: true,
-        default: 0,
       },
       label: {
         type: String,
         required: true,
-        default: '',
       },
     },
   };
@@ -26,8 +24,8 @@
 
 <style lang="scss" scoped>
   .display-number__wrapper {
-    background: gray;
-    border: 1px solid blue;
+    background: #adaaaa;
+    border: 1px solid gray;
     font-size: small;
     padding: 2px;
   }
