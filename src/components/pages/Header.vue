@@ -3,7 +3,7 @@
     <div class="header__primary">
       <div class="header__subheader">
         <div class="header__logo">
-          <img src="../assets/world-cup.png" class="header__image" />
+          <img src="../../assets/world-cup.png" class="header__image" />
         </div>
         <div class="header__title">
           World Cup
@@ -14,10 +14,10 @@
     <div class="header__secondary">
       <div class="header__secondary--align">
         <div class="header__countdown">
-          <DisplayNumber :number=2 label="years" />
-          <DisplayNumber :number=1 label="months" />
-          <DisplayNumber :number=12 label="days" />
-          <DisplayNumber :number=23 label="hours" />
+          <DisplayNumber :number="2" label="years" />
+          <DisplayNumber :number="1" label="months" />
+          <DisplayNumber :number="12" label="days" />
+          <DisplayNumber :number="23" label="hours" />
         </div>
         <div class="header__data">
           <HeaderData text="Tournament dates" />
@@ -31,8 +31,8 @@
 </template>
 
 <script>
-  import DisplayNumber from './DisplayNumber.vue';
-  import HeaderData from './HeaderData.vue';
+  import DisplayNumber from '../elements/header/DisplayNumber.vue';
+  import HeaderData from '../elements/header/HeaderData.vue';
 
   export default {
     components: {
@@ -95,11 +95,11 @@
   }
 
   .header__background-image {
-    background: url(../assets/FIFA-Logo.png) center center no-repeat;
+    background: url(../../assets/FIFA-Logo.png) center center no-repeat;
     background-size: contain;
     background-color: #e3cfd2;
     opacity: 0.5;
-    height: 120px;
+    height: 130px;
   }
 
   .header__secondary--align {

@@ -25,7 +25,7 @@
     data() {
       return {
         desc: false,
-      }
+      };
     },
     components: {
       RowTemplate,
@@ -44,7 +44,7 @@
         this.desc = !this.desc;
       }, 
     },
-  }
+  };
 </script>
 
 <style lang="scss" scoped>
@@ -59,6 +59,4 @@
       cursor: pointer;
     }
   }
-
-
 </style>

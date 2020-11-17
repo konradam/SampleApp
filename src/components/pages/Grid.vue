@@ -2,7 +2,9 @@
   <div class="grid__wrapper">
     <div class="grid__header">
       <input v-model="searchText" placeholder="filter" class="grid__input" />
-      <button class="grid__button">Create new</button>
+      <button class="grid__button" @click="goToNew"> 
+        Create new
+      </button>
     </div>
     <Table :filtered-items="pageItems" />
     <div class="grid__footer">
@@ -14,8 +16,8 @@
 </template>
 
 <script>
-  import Pagination from './Pagination.vue';
-  import Table from './Table.vue';
+  import Pagination from '../elements/grid/Pagination.vue';
+  import Table from '../elements/grid/Table.vue';
   import { mapState } from 'vuex';
   import _ from 'lodash';
 
@@ -58,7 +60,13 @@
         return _.size(this.filteredItems);
       }
     },
-  }
+    methods: {
+      goToNew() {
+        console.log('go to new');
+        this.$router.push({ name: 'grid_new_item' });
+      },
+    },
+  };
 </script>
 
 <style lang="scss" scoped>
