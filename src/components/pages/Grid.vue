@@ -1,7 +1,7 @@
 <template>
   <div class="grid__wrapper">
     <div class="grid__header">
-      <input v-model="searchText" placeholder="filter" class="grid__input" />
+      <v-text-field v-model="searchText" placeholder="filter" hide-details="auto" class="grid__input"  />
       <button class="grid__button" @click="goToNew"> 
         Create new
       </button>
@@ -76,7 +76,7 @@
 
 <style lang="scss" scoped>
   .grid__wrapper {
-    padding: 20px;
+    padding: 40px;
   }
 
   .grid__header {
@@ -88,19 +88,18 @@
 
   .grid__input {
     margin: 0 20px;
-    border-radius: 5px;
-    padding: 6px;
+    max-width: 250px;
   }
 
   .grid__button {
-    background-color: #91bfff;;
+    background-color: #83afeb;;
     border-radius: 5px;
     border: none;
     color: #fff;
     padding: 8px 15px;
 
     &:hover {
-      background-color: #83afeb;
+      background-color: #609df0;
     }
   }
 
@@ -112,7 +111,7 @@
   }
 
   .grid__select {
-    border: 1px solid #007bff;
+    border: 1px solid #91bfff;
     border-radius: 5px;
     padding: 10px 5px;
     margin: 0 20px;

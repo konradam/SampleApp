@@ -48,19 +48,19 @@
   }
   
   /deep/ .page-item {
-    border: 1px solid #007bff;
+    border: 1px solid #91bfff;
     padding: 10px;
   }
 
   /deep/ .next {
-    border: 1px solid #007bff;
+    border: 1px solid #91bfff;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
     padding: 10px;
   }
 
   /deep/ .prev {
-    border: 1px solid #007bff;
+    border: 1px solid #91bfff;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
     padding: 10px;

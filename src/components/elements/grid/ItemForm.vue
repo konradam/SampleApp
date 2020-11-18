@@ -1,39 +1,35 @@
 <template>
   <form class="item-form__wrapper">
     <div class="item-form__attribute">
-      <label class="item-form__label">
-        Name
-      </label>
-      <input v-model="name" class="item-form__input" />
+      <v-text-field
+        v-model="name"
+        label="Name"
+        hide-details="auto"
+      />
+    </div>
+
+    <div class="item-form__attribute">
+      <v-select v-model="type" :items="types" label="Type" dense hide-details="auto" />
+    </div>
+
+    <div class="item-form__attribute">
+      <v-text-field
+        v-model="ref"
+        label="Reference number"
+        hide-details="auto"
+        type="number"
+      />
     </div>
     
     <div class="item-form__attribute">
-      <label class="item-form__label">
-        Type
-      </label>
-      <select v-model="type" class="item-form__select">
-        <option v-for="type in types" :key="type">
-          {{ type }}
-        </option>
-      </select>
-    </div>
-    
-    <div class="item-form__attribute">
-      <label class="item-form__label">
-        Reference number
-      </label>
-      <input v-model="ref" type="number" required class="item-form__input" />
-    </div>
-    
-    <div class="item-form__attribute">
-      <label class="item-form__label">
-        Parent Events
-      </label>
-      <select v-model="parentEvents" multiple class="item-form__select">
-        <option v-for="event in events" :key="event">
-          {{ event }}
-        </option>
-      </select>
+      <v-select
+        v-model="parentEvents"
+        :items="events"
+        label="Parent Events"
+        multiple
+        hint="Choose if applicable"
+        dense
+    ></v-select>
     </div>
   </form>
 </template>
@@ -81,8 +77,7 @@
   
 <style lang="scss" scoped>
   .item-form__wrapper {
-    background-color: #ebebeb;
-    border-color: #7d7c7c;
+    border: 1px solid #7d7c7c;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -91,21 +86,8 @@
   }
   
   .item-form__attribute {
-    padding-bottom: 20px;
+    padding-bottom: 40px;
     width: 30%;
   }
-  
-  .item-form__label {
-    color: #575757;
-    font-size: small;
-    padding-bottom: 5px;
-  }
-  
-  .item-form__input,
-  .item-form__select {
-    border: solid 1px #858585;
-    border-radius: 5px;
-    padding: 10px 5px;
-    width: 100%;
-  }
+
 </style>

@@ -27,8 +27,7 @@
   
 <style lang="scss" scoped>
   .action-bar__wrapper {
-    background-color: #ebebeb;
-    border-color: #7d7c7c;
+    border: 1px solid #7d7c7c;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
@@ -48,21 +47,21 @@
     margin: 0 10px;
   
     &--save {
-      background-color: #91bfff;
+      background-color: #83afeb;
       border-radius: 5px;
       color: #fff;
 
       &:hover {
-        background-color: #83afeb;
+        background-color: #609df0;
       }
     }
   
     &--cancel {
       background-color: transparent;
-      color: #91bfff;
+      color: #83afeb;
 
       &:hover {
-        color: #83afeb;
+        color: #609df0;
       }
     }
   }
