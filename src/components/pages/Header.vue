@@ -6,7 +6,7 @@
           <img src="../../assets/world-cup.png" class="header__image" />
         </div>
         <div class="header__title">
-          World Cup
+          WORLD CUP
         </div>
       </div>
       <div class="header__background-image" />
@@ -44,7 +44,6 @@
 
 <style lang="scss" scoped>
   .header__wrapper {
-    border: 1px blue solid;
     display: flex;
 
     @media only screen and (max-width:767px) {
@@ -53,39 +52,32 @@
   }
 
   .header__primary {
-    border-right: 1px solid blue;
     flex: 2;
-    
-    @media only screen and (max-width:767px) {
-      border-right: none;
-      border-bottom: 1px solid blue;
-    }
   }
 
   .header__secondary {
-    background: lightgray;
+    background-color: #dadee0;
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     &--align {
+      align-items: flex-start;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
       height: 100%;
       width: 100%;
+      padding: 20px;
     }
   }
 
   .header__subheader {
-    background-color: #d1e1ed;
-    border-bottom: 1px solid blue;
+    background-color: #85a0c7;
     display: flex;
   }
 
   .header__logo {
-    border-right: 1px solid blue;
     flex: 1;
     justify-content: center;
     display: flex;
@@ -98,16 +90,15 @@
   .header__title {
     align-self: center;
     flex: 8;
-    padding: 20px;
     font-size: 30px;
     font-weight: bold;
+    padding: 20px;
   }
 
   .header__background-image {
-    background: url(../../assets/FIFA-Logo.png) center center no-repeat;
-    background-size: contain;
-    background-color: #e3cfd2;
-    opacity: 0.5;
+    background: url(../../assets/cover-image.jpg) center center no-repeat;
+    background-size: cover;
+    opacity: 0.3;
     height: 130px;
   }
 

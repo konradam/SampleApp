@@ -93,10 +93,15 @@
   }
 
   .grid__button {
+    background-color: #91bfff;;
     border-radius: 5px;
-    padding: 6px 15px;
-    background-color: cornflowerblue;
-    color: white;
+    border: none;
+    color: #fff;
+    padding: 8px 15px;
+
+    &:hover {
+      background-color: #83afeb;
+    }
   }
 
   .grid__footer {

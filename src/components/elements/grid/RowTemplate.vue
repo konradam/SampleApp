@@ -49,19 +49,19 @@
 </script>
 
 <style lang="scss" scoped>
+  .table__row {
+    &:hover {
+      background-color: #91bfff;
+    }
+  }
+
   .table__body-name {
-    color: blue;
+    color: #5183c9;
   }
 
   .table__body-action {
     display: flex;
     justify-content: flex-end;
-  }
-
-  .table__row {
-    &:hover {
-      background-color: lightblue;
-    }
   }
 
   .table__icon {

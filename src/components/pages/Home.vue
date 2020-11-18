@@ -2,12 +2,12 @@
   <div class="home__wrapper">
     <RouterLink :to="{ name: 'header'}">
       <button class="home__button">
-        Header
+        HEADER
       </button>
     </RouterLink>
     <RouterLink :to="{ name: 'grid'}">
       <button class="home__button">
-        Grid
+        GRID
       </button>
     </RouterLink>
   </div>
@@ -22,10 +22,19 @@
   }
 
   .home__button {
-    border-radius: 5px;
-    padding: 20px 30px;
-    background-color: cornflowerblue;
-    color: white;
+    background-color: #91bfff;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 70px 100px;
     margin: 30px;
+    min-width: 300px;
+
+    &:hover {
+      background-color: #86b0eb;
+      box-shadow: 0 30px 30px 0 rgba(27, 41, 56, 0.2);
+    }
   }
 </style>

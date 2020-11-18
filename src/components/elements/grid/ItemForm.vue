@@ -81,7 +81,7 @@
   
 <style lang="scss" scoped>
   .item-form__wrapper {
-    background-color: #f0f0f0;
+    background-color: #ebebeb;
     border-color: #7d7c7c;
     border-radius: 5px;
     display: flex;
@@ -103,7 +103,7 @@
   
   .item-form__input,
   .item-form__select {
-    border: none;
+    border: solid 1px #858585;
     border-radius: 5px;
     padding: 10px 5px;
     width: 100%;
